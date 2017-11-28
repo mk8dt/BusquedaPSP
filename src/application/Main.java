@@ -12,10 +12,25 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.fxml.FXMLLoader;
+
+
+/**
+ * @author mario
+ * @version 1.0
+ */
+
+ 
+/**
+ * The Class Main.
+ */
 public class Main extends Application {
 	
+	/** The root. */
 	private AnchorPane root;
 	
+	/* (non-Javadoc)
+	 * @see javafx.application.Application#start(javafx.stage.Stage)
+	 */
 	@Override
 	public void start(Stage primaryStage) {
 		
@@ -41,7 +56,13 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
+	
+	/** The array webs. */
 	private ObservableList<StringProperty> arrayWebs = FXCollections.observableArrayList();
+	
+	/**
+	 * Leer webs.
+	 */
 	public void leerWebs() {
 		
 		String webs = "webs.txt";
@@ -69,12 +90,31 @@ public class Main extends Application {
 		}
 		
 	}
+	
+	/**
+	 * Gets the array webs.
+	 *
+	 * @return the array webs
+	 */
 	public ObservableList<StringProperty> getArrayWebs() {
 		return arrayWebs;
 	}
+	
+	/**
+	 * Sets the array webs.
+	 *
+	 * @param arrayWebs the new array webs
+	 */
 	public void setarrayWebs(ObservableList<StringProperty> arrayWebs) {
 		this.arrayWebs = arrayWebs;
 	}
+	
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 */
+	
 	public static void main(String[] args) {
 		launch(args);
 		

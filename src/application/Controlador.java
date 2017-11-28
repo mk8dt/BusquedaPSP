@@ -10,41 +10,63 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
+	
+/**
+	 * The Class Controlador.
+	 */
 	public class Controlador {
 
+		/** The nombre. */
 		String nombre = "webs.txt";
+		
+		/** The bw. */
 		BufferedWriter bw = null;
 		
+		/** The br. */
 		BufferedReader br = null;
 		
-	    @FXML
+	    /** The ap ventana. */
+    	@FXML
 	    private AnchorPane apVentana;
 
-	    @FXML
+	    /** The btn excel. */
+    	@FXML
 	    private Button btnExcel;
 
-	    @FXML
+	    /** The btn word. */
+    	@FXML
 	    private Button btnWord;
 
-	    @FXML
+	    /** The btn power. */
+    	@FXML
 	    private Button btnPower;
 
-	    @FXML
+	    /** The btn web. */
+    	@FXML
 	    private Button btnWeb;
 
-	    @FXML
+	    /** The txt web. */
+    	@FXML
 	    private TextField txtWeb;
 
-	    @FXML
+	    /** The tb historial. */
+    	@FXML
 	    private TableView<StringProperty> tbHistorial;
 	    
-	    @FXML
+	    /** The tb columna. */
+    	@FXML
 	    private TableColumn<StringProperty,String> tbColumna;
 	    
-	    private Main main;
+	    /** The main. */
+    	private Main main;
 	    
 	    
-	    @FXML
+	    /**
+    	 * Boton excel.
+    	 *
+    	 * @param event the event
+    	 */
+    	@FXML
 	    void btnExcel(MouseEvent event) {
 			try {
 				Runtime.getRuntime().exec("rundll32 url.dll, FileProtocolHandler "+ "EXCEL");
@@ -52,7 +74,13 @@ import javafx.scene.layout.AnchorPane;
 				e.printStackTrace();
 			}
 	    }
-	    @FXML
+	    
+    	/**
+    	 * Boton word.
+    	 *
+    	 * @param event the event
+    	 */
+    	@FXML
 	    void btnWord(MouseEvent event) {
 			try {
 				Runtime.getRuntime().exec("rundll32 url.dll, FileProtocolHandler "+ "WINWORD");
@@ -60,7 +88,13 @@ import javafx.scene.layout.AnchorPane;
 				e.printStackTrace();
 			}
 	    }
-	    @FXML
+	    
+    	/**
+    	 * Boton power.
+    	 *
+    	 * @param event the event
+    	 */
+    	@FXML
 	    void btnPower(MouseEvent event) {
 			
 			try {
@@ -69,7 +103,13 @@ import javafx.scene.layout.AnchorPane;
 				e.printStackTrace();
 			}
 	    }
-	    @FXML
+	    
+    	/**
+    	 * Boton web.
+    	 *
+    	 * @param event the event
+    	 */
+    	@FXML
 	    void btnWeb(MouseEvent event) {
 	    	
 			try {
@@ -80,7 +120,11 @@ import javafx.scene.layout.AnchorPane;
 				e.printStackTrace();
 			}
 	    }
-	    @FXML
+	    
+    	/**
+    	 * Initialize.
+    	 */
+    	@FXML
 	    private void initialize() {
 	       
 			 tbColumna.setCellValueFactory(
@@ -96,6 +140,10 @@ import javafx.scene.layout.AnchorPane;
 					}
 				});						
     	} 
+		
+		/**
+		 * Escribir web.
+		 */
 		private void escribirWeb() {
 			boolean esta = false;
 	    	  try { 
@@ -124,6 +172,12 @@ import javafx.scene.layout.AnchorPane;
 			}
 			
 		}
+		
+		/**
+		 * Inicializar tabla.
+		 *
+		 * @param main the main
+		 */
 		public void inicializarTabla(Main main) {
 			this.main = main;
 
